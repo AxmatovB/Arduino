@@ -1,0 +1,11 @@
+[Unit]
+Description=Hand Panel Camera App
+
+[Service]
+Type=simple
+WorkingDirectory=%h/hand_panel
+ExecStart=%h/hand_panel/.venv/bin/python %h/hand_panel/app.py
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

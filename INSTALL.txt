@@ -1,0 +1,28 @@
+1) Folderga kiring:
+   cd "my project"
+
+2) Python 3.11 bo'lishi kerak:
+   python3.11 -V
+   (yo'q bo'lsa) sudo apt install -y python3.11 python3.11-venv
+
+3) venv yaratish va paket o'rnatish:
+   python3.11 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+
+4) App ni qo'lda run:
+   python app.py
+
+5) Arduino ulansa AUTO-RUN (Variant B):
+   - systemd user service:
+     mkdir -p ~/.config/systemd/user
+     cp systemd-user/hand-panel.service ~/.config/systemd/user/
+     systemctl --user daemon-reload
+
+   - udev rule (root kerak):
+     sudo cp udev/99-hand-panel.rules /etc/udev/rules.d/
+     sudo udevadm control --reload-rules
+     sudo udevadm trigger
+
+   Eslatma: udev rule ichidagi idVendor/idProduct sizning Arduino'ga mos bo'lishi shart.
+

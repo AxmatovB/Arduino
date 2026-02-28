@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", TAG+="systemd", ENV{SYSTEMD_USER_WANTS}="hand-panel.service"
+
